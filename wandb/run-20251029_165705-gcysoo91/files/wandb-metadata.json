@@ -1,0 +1,37 @@
+{
+  "os": "macOS-26.0.1-arm64-arm-64bit",
+  "python": "CPython 3.12.11",
+  "startedAt": "2025-10-29T15:57:05.837477Z",
+  "program": "/Users/tomasmajercik/School/5_semester/ZNEUS/project1/zneus_1_zadanie.ipynb",
+  "codePath": "/Users/tomasmajercik/School/5_semester/ZNEUS/project1/zneus_1_zadanie.ipynb",
+  "codePathLocal": "zneus_1_zadanie.ipynb",
+  "git": {
+    "remote": "https://github.com/StyroD/zneus_1.git",
+    "commit": "29bae5f04c0205139424947d0f15cd6d8d1cba91"
+  },
+  "email": "xmajercik@stuba.sk",
+  "root": "/Users/tomasmajercik/School/5_semester/ZNEUS/project1",
+  "host": "eduroam-162-242.fiit.stuba.sk",
+  "executable": "/Users/tomasmajercik/miniconda3/envs/zneus/bin/python",
+  "cpu_count": 10,
+  "cpu_count_logical": 10,
+  "disk": {
+    "/": {
+      "total": "994662584320",
+      "used": "407000281088"
+    }
+  },
+  "memory": {
+    "total": "34359738368"
+  },
+  "apple": {
+    "name": "Apple M1 Max",
+    "ecpuCores": 2,
+    "pcpuCores": 8,
+    "gpuCores": 32,
+    "memoryGb": 32,
+    "swapTotalBytes": "6442450944",
+    "ramTotalBytes": "34359738368"
+  },
+  "writerId": "n3czjde18ex9sceomwvl4l7e9c2n9acb"
+}
