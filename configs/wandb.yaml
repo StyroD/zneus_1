@@ -1,0 +1,7 @@
+wandb:
+  enabled: true
+  name: "<name>" # e.g. mlp_bioresponse_baseline
+  project: "<project name>" # e.g. bioresponse-mlp
+  entity: "<entity name>" 
+  run_name: "<run name>" # e.g. baseline_100epochs_test_tanh
+  notes: "<additional notes>" # e.g. Baseline MLP with dropout 0.3 and batch normalization

@@ -1,0 +1,117 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            qze2s1rve27skz0bu7pfw1vl1m2oyeol:
+                apple:
+                    ecpuCores: 2
+                    gpuCores: 32
+                    memoryGb: 32
+                    name: Apple M1 Max
+                    pcpuCores: 8
+                    ramTotalBytes: "34359738368"
+                    swapTotalBytes: "5368709120"
+                codePath: /Users/tomasmajercik/School/5_semester/ZNEUS/project1/zneus_1_zadanie.ipynb
+                codePathLocal: zneus_1_zadanie.ipynb
+                cpu_count: 10
+                cpu_count_logical: 10
+                disk:
+                    /:
+                        total: "994662584320"
+                        used: "404594143232"
+                email: xmajercik@stuba.sk
+                executable: /Users/tomasmajercik/miniconda3/envs/zneus/bin/python
+                git:
+                    commit: c9aa66f21fe6f10b03bb6ea5fbbecba7d5afbb4d
+                    remote: https://github.com/StyroD/zneus_1.git
+                host: Tomas-Ms-MacBook-Pro.local
+                memory:
+                    total: "34359738368"
+                os: macOS-26.0.1-arm64-arm-64bit
+                program: /Users/tomasmajercik/School/5_semester/ZNEUS/project1/zneus_1_zadanie.ipynb
+                python: CPython 3.12.11
+                root: /Users/tomasmajercik/School/5_semester/ZNEUS/project1
+                startedAt: "2025-10-30T09:33:48.396353Z"
+                writerId: qze2s1rve27skz0bu7pfw1vl1m2oyeol
+        m: []
+        python_version: 3.12.11
+        t:
+            "1":
+                - 1
+                - 5
+                - 53
+            "2":
+                - 1
+                - 5
+                - 53
+            "3":
+                - 1
+                - 2
+                - 13
+                - 16
+            "4": 3.12.11
+            "5": 0.22.3
+            "8":
+                - 1
+            "12": 0.22.3
+            "13": darwin-arm64
+        visualize:
+            final_conf_mat:
+                panel_config:
+                    fieldSettings:
+                        Actual: Actual
+                        Predicted: Predicted
+                        nPredictions: nPredictions
+                    panelDefId: wandb/confusion_matrix/v1
+                    stringSettings:
+                        title: Confusion Matrix Curve
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: final_conf_mat_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+experiment:
+    value:
+        log_interval: 10
+        name: mlp_bioresponse_baseline
+        output_dir: results/
+model:
+    value:
+        activation: relu
+        batch_norm: true
+        dropout: 0.3
+        hidden_layers:
+            - 128
+            - 64
+            - 32
+        output_dim: 1
+training:
+    value:
+        batch_size: 32
+        device: cpu
+        epochs: 50
+        learning_rate: "1e-3"
+        optimizer: adam
+wandb:
+    value:
+        enabled: true
+        entity: xmajercik-fiit-stu
+        notes: Baseline MLP with dropout 0.3 and batch normalization
+        project: bioresponse-mlp
+        run_name: mlp_baseline_50epochs_test

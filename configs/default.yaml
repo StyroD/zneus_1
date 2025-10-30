@@ -1,14 +1,14 @@
 # configs/default.yaml
 model:
-  input_dim: 1773
-  hidden_layers: [512, 256, 128]
-  activation: relu
+  # input_dim: # is set dynamically based on dataset
+  hidden_layers: [128, 64, 32]
+  activation: tanh
   dropout: 0.3
   batch_norm: true
   output_dim: 1  # binary classification
 
 training:
-  epochs: 50
+  epochs: 100
   batch_size: 32
   learning_rate: 1e-3
   optimizer: adam
@@ -18,10 +18,3 @@ experiment:
   name: "mlp_bioresponse_baseline"
   output_dir: "results/"
   log_interval: 10
-
-wandb:
-  enabled: true
-  project: "bioresponse-mlp"
-  entity: "xmajercik-fiit-stu"
-  run_name: "mlp_baseline_dropout0.3"
-  notes: "Baseline MLP with dropout 0.3 and batch normalization"
