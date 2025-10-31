@@ -1,20 +1,21 @@
 # configs/default.yaml
 model:
   # input_dim: # is set dynamically based on dataset
-  hidden_layers: [128, 64, 32]
-  activation: tanh
+  hidden_layers: [256, 128, 64]
+  activation: tanh # (relu / tanh / sigmoid)
   dropout: 0.3
   batch_norm: true
   output_dim: 1  # binary classification
 
 training:
-  epochs: 100
+  epochs: 50
   batch_size: 32
   learning_rate: 1e-3
-  optimizer: adam
+  optimizer: rmsprop      # (adam / sgd / adamw / rmsprop
   device: cpu
 
 experiment:
+  group: "sweep-01" # used for wandb grouping
   name: "mlp_bioresponse_baseline"
   output_dir: "results/"
   log_interval: 10
