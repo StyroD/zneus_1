@@ -1,0 +1,61 @@
+2025-10-30 10:33:48,400 INFO    MainThread:78455 [wandb_setup.py:_flush():81] Current SDK version is 0.22.3
+2025-10-30 10:33:48,400 INFO    MainThread:78455 [wandb_setup.py:_flush():81] Configure stats pid to 78455
+2025-10-30 10:33:48,400 INFO    MainThread:78455 [wandb_setup.py:_flush():81] Loading settings from /Users/tomasmajercik/.config/wandb/settings
+2025-10-30 10:33:48,400 INFO    MainThread:78455 [wandb_setup.py:_flush():81] Loading settings from /Users/tomasmajercik/School/5_semester/ZNEUS/project1/wandb/settings
+2025-10-30 10:33:48,400 INFO    MainThread:78455 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-10-30 10:33:48,401 INFO    MainThread:78455 [wandb_init.py:setup_run_log_directory():706] Logging user logs to /Users/tomasmajercik/School/5_semester/ZNEUS/project1/wandb/run-20251030_103348-ln9abmmp/logs/debug.log
+2025-10-30 10:33:48,401 INFO    MainThread:78455 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to /Users/tomasmajercik/School/5_semester/ZNEUS/project1/wandb/run-20251030_103348-ln9abmmp/logs/debug-internal.log
+2025-10-30 10:33:48,401 INFO    MainThread:78455 [wandb_init.py:monkeypatch_ipython():625] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x323f3a5d0>
+2025-10-30 10:33:48,401 INFO    MainThread:78455 [wandb_init.py:init():833] calling init triggers
+2025-10-30 10:33:48,401 INFO    MainThread:78455 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'model': {'hidden_layers': [128, 64, 32], 'activation': 'relu', 'dropout': 0.3, 'batch_norm': True, 'output_dim': 1}, 'training': {'epochs': 50, 'batch_size': 32, 'learning_rate': '1e-3', 'optimizer': 'adam', 'device': 'cpu'}, 'experiment': {'name': 'mlp_bioresponse_baseline', 'output_dir': 'results/', 'log_interval': 10}, 'wandb': {'enabled': True, 'project': 'bioresponse-mlp', 'entity': 'xmajercik-fiit-stu', 'run_name': 'mlp_baseline_50epochs_test', 'notes': 'Baseline MLP with dropout 0.3 and batch normalization'}, '_wandb': {}}
+2025-10-30 10:33:48,401 INFO    MainThread:78455 [wandb_init.py:init():881] starting backend
+2025-10-30 10:33:48,650 INFO    MainThread:78455 [wandb_init.py:init():884] sending inform_init request
+2025-10-30 10:33:48,688 INFO    MainThread:78455 [wandb_init.py:init():892] backend started and connected
+2025-10-30 10:33:48,695 INFO    MainThread:78455 [wandb_run.py:_label_probe_notebook():1328] probe notebook
+2025-10-30 10:33:48,696 INFO    MainThread:78455 [wandb_init.py:init():962] updated telemetry
+2025-10-30 10:33:48,713 INFO    MainThread:78455 [wandb_init.py:init():986] communicating run to backend with 90.0 second timeout
+2025-10-30 10:33:49,313 INFO    MainThread:78455 [wandb_init.py:init():1033] starting run threads in backend
+2025-10-30 10:33:49,409 INFO    MainThread:78455 [wandb_run.py:_console_start():2506] atexit reg
+2025-10-30 10:33:49,409 INFO    MainThread:78455 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-10-30 10:33:49,409 INFO    MainThread:78455 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-10-30 10:33:49,409 INFO    MainThread:78455 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-10-30 10:33:49,411 INFO    MainThread:78455 [wandb_init.py:init():1073] run started, returning control to user process
+2025-10-30 10:33:49,411 INFO    MainThread:78455 [wandb_watch.py:_watch():68] Watching
+2025-10-30 10:33:49,412 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:33:49,416 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:33:49,416 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:33:49,418 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:33:49,423 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:33:49,423 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:34:00,031 INFO    MainThread:78455 [wandb_run.py:_config_callback():1390] config_cb ('_wandb', 'visualize', 'final_conf_mat') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': 'Confusion Matrix Curve'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'final_conf_mat_table'}], 'fields': []}]}]}}} None
+2025-10-30 10:34:01,423 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:34:01,434 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:34:01,435 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:34:01,449 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:36:54,723 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:36:54,724 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:36:54,738 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:38:55,765 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:38:55,766 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:38:55,768 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:38:57,064 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:38:57,064 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:39:17,377 INFO    MainThread:78455 [wandb_run.py:_config_callback():1390] config_cb ('_wandb', 'visualize', 'final_conf_mat') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': 'Confusion Matrix Curve'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'final_conf_mat_table'}], 'fields': []}]}]}}} None
+2025-10-30 10:39:18,308 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:39:18,318 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:39:18,319 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:39:18,334 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:41:30,382 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:41:30,383 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:41:30,388 INFO    MainThread:78455 [wandb_init.py:_post_run_cell_hook():595] [no run ID] resuming backend
+2025-10-30 10:41:30,394 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] [no run ID] not saving jupyter notebook
+2025-10-30 10:41:30,394 INFO    MainThread:78455 [wandb_init.py:_pre_run_cell_hook():584] [no run ID] pausing backend
+2025-10-30 10:41:30,400 INFO    MainThread:78455 [wandb_run.py:_finish():2272] finishing run xmajercik-fiit-stu/bioresponse-mlp/ln9abmmp
+2025-10-30 10:41:30,401 INFO    MainThread:78455 [jupyter.py:save_history():429] not saving jupyter history
+2025-10-30 10:41:30,402 INFO    MainThread:78455 [jupyter.py:save_ipynb():353] not saving jupyter notebook
+2025-10-30 10:41:30,402 INFO    MainThread:78455 [wandb_init.py:_jupyter_teardown():610] cleaning up jupyter logic
+2025-10-30 10:41:30,402 INFO    MainThread:78455 [wandb_run.py:_atexit_cleanup():2471] got exitcode: 0
+2025-10-30 10:41:30,402 INFO    MainThread:78455 [wandb_run.py:_restore():2453] restore
+2025-10-30 10:41:30,402 INFO    MainThread:78455 [wandb_run.py:_restore():2459] restore done
+2025-10-30 10:41:31,667 INFO    MainThread:78455 [wandb_run.py:_footer_sync_info():3835] logging synced files

@@ -1,0 +1,125 @@
+2025-10-30 10:10:31,237 INFO    MainThread:75183 [wandb_init.py:setup_run_log_directory():706] Logging user logs to /Users/tomasmajercik/School/5_semester/ZNEUS/project1/wandb/run-20251030_101031-jxhfhbl8/logs/debug.log
+2025-10-30 10:10:31,237 INFO    MainThread:75183 [wandb_init.py:setup_run_log_directory():707] Logging internal logs to /Users/tomasmajercik/School/5_semester/ZNEUS/project1/wandb/run-20251030_101031-jxhfhbl8/logs/debug-internal.log
+2025-10-30 10:10:31,237 INFO    MainThread:75183 [wandb_init.py:init():833] calling init triggers
+2025-10-30 10:10:31,237 INFO    MainThread:75183 [wandb_init.py:init():838] wandb.init called with sweep_config: {}
+config: {'model': {'hidden_layers': [128, 64, 32], 'activation': 'relu', 'dropout': 0.3, 'batch_norm': True, 'output_dim': 1}, 'training': {'epochs': 10, 'batch_size': 32, 'learning_rate': '1e-3', 'optimizer': 'adam', 'device': 'cpu'}, 'experiment': {'name': 'mlp_bioresponse_baseline', 'output_dir': 'results/', 'log_interval': 10}, 'wandb': {'enabled': True, 'project': 'bioresponse-mlp', 'entity': 'xmajercik-fiit-stu', 'run_name': 'mlp_baseline_dropout0.3-first-run', 'notes': 'Baseline MLP with dropout 0.3 and batch normalization'}, '_wandb': {}}
+2025-10-30 10:10:32,090 INFO    MainThread:75183 [wandb_init.py:init():881] starting backend
+2025-10-30 10:10:32,090 INFO    MainThread:75183 [wandb_init.py:init():884] sending inform_init request
+2025-10-30 10:10:32,091 INFO    MainThread:75183 [wandb_init.py:init():892] backend started and connected
+2025-10-30 10:10:32,092 INFO    MainThread:75183 [wandb_run.py:_label_probe_notebook():1328] probe notebook
+2025-10-30 10:10:32,093 INFO    MainThread:75183 [wandb_init.py:init():962] updated telemetry
+2025-10-30 10:10:32,115 INFO    MainThread:75183 [wandb_init.py:init():986] communicating run to backend with 90.0 second timeout
+2025-10-30 10:10:32,593 INFO    MainThread:75183 [wandb_init.py:init():1033] starting run threads in backend
+2025-10-30 10:10:32,694 INFO    MainThread:75183 [wandb_run.py:_console_start():2506] atexit reg
+2025-10-30 10:10:32,694 INFO    MainThread:75183 [wandb_run.py:_redirect():2354] redirect: wrap_raw
+2025-10-30 10:10:32,694 INFO    MainThread:75183 [wandb_run.py:_redirect():2423] Wrapping output streams.
+2025-10-30 10:10:32,694 INFO    MainThread:75183 [wandb_run.py:_redirect():2446] Redirects installed.
+2025-10-30 10:10:32,695 INFO    MainThread:75183 [wandb_init.py:init():1073] run started, returning control to user process
+2025-10-30 10:10:32,695 INFO    MainThread:75183 [wandb_watch.py:_watch():68] Watching
+2025-10-30 10:27:47,469 INFO    MainThread:75183 [wandb_run.py:_config_callback():1390] config_cb ('_wandb', 'visualize', 'final_conf_mat') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': 'Confusion Matrix Curve'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'final_conf_mat_table'}], 'fields': []}]}]}}} None
+2025-10-30 10:29:58,358 INFO    MainThread:75183 [wandb_run.py:_config_callback():1390] config_cb ('_wandb', 'visualize', 'final_conf_mat') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': 'Confusion Matrix Curve'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'final_conf_mat_table'}], 'fields': []}]}]}}} None
+2025-10-30 10:30:26,833 INFO    MainThread:75183 [wandb_run.py:_config_callback():1390] config_cb ('_wandb', 'visualize', 'final_conf_mat') {'panel_type': 'Vega2', 'panel_config': {'panelDefId': 'wandb/confusion_matrix/v1', 'fieldSettings': {'Actual': 'Actual', 'Predicted': 'Predicted', 'nPredictions': 'nPredictions'}, 'stringSettings': {'title': 'Confusion Matrix Curve'}, 'transform': {'name': 'tableWithLeafColNames'}, 'userQuery': {'queryFields': [{'name': 'runSets', 'args': [{'name': 'runSets', 'value': '${runSets}'}], 'fields': [{'name': 'id', 'fields': []}, {'name': 'name', 'fields': []}, {'name': '_defaultColorIndex', 'fields': []}, {'name': 'summaryTable', 'args': [{'name': 'tableKey', 'value': 'final_conf_mat_table'}], 'fields': []}]}]}}} None
+2025-10-30 10:31:59,768 INFO    MainThread:75183 [wandb_run.py:_finish():2272] finishing run xmajercik-fiit-stu/bioresponse-mlp/jxhfhbl8
+2025-10-30 10:31:59,768 INFO    MainThread:75183 [wandb_run.py:_atexit_cleanup():2471] got exitcode: 0
+2025-10-30 10:31:59,769 INFO    MainThread:75183 [wandb_run.py:_restore():2453] restore
+2025-10-30 10:31:59,769 INFO    MainThread:75183 [wandb_run.py:_restore():2459] restore done
+2025-10-30 10:32:07,838 WARNING MainThread:75183 [wandb_init.py:init():1588] [no run ID] interrupted
+Traceback (most recent call last):
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1579, in init
+    run = wi.init(run_settings, run_config, run_printer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 854, in init
+    self._wl.finish_all_active_runs()
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_setup.py", line 166, in finish_all_active_runs
+    run.finish()
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_run.py", line 397, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_run.py", line 442, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_run.py", line 2260, in finish
+    return self._finish(exit_code)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_run.py", line 397, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_run.py", line 2288, in _finish
+    self._atexit_cleanup(exit_code=exit_code)
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_run.py", line 2483, in _atexit_cleanup
+    self._on_finish()
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_run.py", line 2702, in _on_finish
+    wait_with_progress(
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 23, in wait_with_progress
+    return wait_all_with_progress(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/mailbox/wait_with_progress.py", line 77, in wait_all_with_progress
+    return asyncer.run(progress_loop_with_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_manager.py", line 136, in run
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/concurrent/futures/_base.py", line 451, in result
+    self._condition.wait(timeout)
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/threading.py", line 355, in wait
+    waiter.acquire()
+KeyboardInterrupt
+2025-10-30 10:32:25,555 ERROR   MainThread:75183 [wandb_init.py:init():1594] [no run ID] error in wandb.init()
+Traceback (most recent call last):
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1579, in init
+    run = wi.init(run_settings, run_config, run_printer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 885, in init
+    service.inform_init(
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/service/service_connection.py", line 158, in inform_init
+    self._asyncer.run(
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_manager.py", line 136, in run
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_manager.py", line 219, in _wrap
+    return await fn()
+           ^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/asyncio/streams.py", line 392, in drain
+    await self._protocol._drain_helper()
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/asyncio/streams.py", line 166, in _drain_helper
+    raise ConnectionResetError('Connection lost')
+ConnectionResetError: Connection lost
+2025-10-30 10:33:04,660 ERROR   MainThread:75183 [wandb_init.py:init():1594] [no run ID] error in wandb.init()
+Traceback (most recent call last):
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 1579, in init
+    run = wi.init(run_settings, run_config, run_printer)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/wandb_init.py", line 885, in init
+    service.inform_init(
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/service/service_connection.py", line 158, in inform_init
+    self._asyncer.run(
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_manager.py", line 136, in run
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/asyncio_manager.py", line 219, in _wrap
+    return await fn()
+           ^^^^^^^^^^
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/service/service_client.py", line 38, in publish
+    await self._send_server_request(request)
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/site-packages/wandb/sdk/lib/service/service_client.py", line 64, in _send_server_request
+    await self._writer.drain()
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/asyncio/streams.py", line 380, in drain
+    raise exc
+  File "/Users/tomasmajercik/miniconda3/envs/zneus/lib/python3.12/asyncio/selector_events.py", line 1075, in write
+    n = self._sock.send(data)
+        ^^^^^^^^^^^^^^^^^^^^^
+BrokenPipeError: [Errno 32] Broken pipe

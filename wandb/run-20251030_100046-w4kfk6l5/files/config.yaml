@@ -1,0 +1,86 @@
+_wandb:
+    value:
+        cli_version: 0.22.3
+        e:
+            yoiapp8g1x573umticrhdbusbpodfdjb:
+                apple:
+                    ecpuCores: 2
+                    gpuCores: 32
+                    memoryGb: 32
+                    name: Apple M1 Max
+                    pcpuCores: 8
+                    ramTotalBytes: "34359738368"
+                    swapTotalBytes: "5368709120"
+                codePath: /Users/tomasmajercik/School/5_semester/ZNEUS/project1/zneus_1_zadanie.ipynb
+                codePathLocal: zneus_1_zadanie.ipynb
+                cpu_count: 10
+                cpu_count_logical: 10
+                disk:
+                    /:
+                        total: "994662584320"
+                        used: "404555558912"
+                email: xmajercik@stuba.sk
+                executable: /Users/tomasmajercik/miniconda3/envs/zneus/bin/python
+                git:
+                    commit: c9aa66f21fe6f10b03bb6ea5fbbecba7d5afbb4d
+                    remote: https://github.com/StyroD/zneus_1.git
+                host: Tomas-Ms-MacBook-Pro.local
+                memory:
+                    total: "34359738368"
+                os: macOS-26.0.1-arm64-arm-64bit
+                program: /Users/tomasmajercik/School/5_semester/ZNEUS/project1/zneus_1_zadanie.ipynb
+                python: CPython 3.12.11
+                root: /Users/tomasmajercik/School/5_semester/ZNEUS/project1
+                startedAt: "2025-10-30T09:00:46.342625Z"
+                writerId: yoiapp8g1x573umticrhdbusbpodfdjb
+        m: []
+        python_version: 3.12.11
+        t:
+            "1":
+                - 1
+                - 5
+                - 53
+            "2":
+                - 1
+                - 5
+                - 53
+            "3":
+                - 1
+                - 2
+                - 13
+                - 16
+            "4": 3.12.11
+            "5": 0.22.3
+            "8":
+                - 1
+            "12": 0.22.3
+            "13": darwin-arm64
+experiment:
+    value:
+        log_interval: 10
+        name: mlp_bioresponse_baseline
+        output_dir: results/
+model:
+    value:
+        activation: relu
+        batch_norm: true
+        dropout: 0.3
+        hidden_layers:
+            - 512
+            - 256
+            - 128
+        output_dim: 1
+training:
+    value:
+        batch_size: 32
+        device: cpu
+        epochs: 50
+        learning_rate: "1e-3"
+        optimizer: adam
+wandb:
+    value:
+        enabled: true
+        entity: xmajercik-fiit-stu
+        notes: Baseline MLP with dropout 0.3 and batch normalization
+        project: bioresponse-mlp
+        run_name: mlp_baseline_dropout0.3

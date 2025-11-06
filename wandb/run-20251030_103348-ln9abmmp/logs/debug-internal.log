@@ -1,0 +1,12 @@
+{"time":"2025-10-30T10:33:48.689774+01:00","level":"INFO","msg":"stream: starting","core version":"0.22.3"}
+{"time":"2025-10-30T10:33:48.978401+01:00","level":"INFO","msg":"stream: created new stream","id":"ln9abmmp"}
+{"time":"2025-10-30T10:33:48.978457+01:00","level":"INFO","msg":"handler: started","stream_id":"ln9abmmp"}
+{"time":"2025-10-30T10:33:48.978623+01:00","level":"INFO","msg":"stream: started","id":"ln9abmmp"}
+{"time":"2025-10-30T10:33:48.978627+01:00","level":"INFO","msg":"writer: started","stream_id":"ln9abmmp"}
+{"time":"2025-10-30T10:33:48.978649+01:00","level":"INFO","msg":"sender: started","stream_id":"ln9abmmp"}
+{"time":"2025-10-30T10:41:31.450557+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-10-30T10:41:31.663389+01:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2025-10-30T10:41:31.669928+01:00","level":"INFO","msg":"stream: closing","id":"ln9abmmp"}
+{"time":"2025-10-30T10:41:31.669953+01:00","level":"INFO","msg":"handler: closed","stream_id":"ln9abmmp"}
+{"time":"2025-10-30T10:41:31.670006+01:00","level":"INFO","msg":"sender: closed","stream_id":"ln9abmmp"}
+{"time":"2025-10-30T10:41:31.670013+01:00","level":"INFO","msg":"stream: closed","id":"ln9abmmp"}
