@@ -1,0 +1,29 @@
+method: random   # random / bayes / grid / hyperband
+metric:
+  name: val_f1
+  goal: maximize
+
+parameters:
+  training.learning_rate:
+    distribution: log_uniform_values
+    min: 1e-4
+    max: 1e-2
+  training.batch_size:
+    values: [16, 32, 64]
+  training.epochs:
+    value: 40
+  training.optimizer:
+    values: ["adam", "sgd", "adamw"]
+  model.hidden_layers:
+    values:
+      - [128, 64, 32]
+      - [256, 128, 64]
+      - [64, 128, 256]
+      - [128, 256]
+      - [512, 256, 128, 64]
+  model.activation:
+    values: ["relu", "tanh"]
+  model.dropout:
+    values: [0.2, 0.3, 0.5]
+  model.batch_norm:
+    values: [true, false]
