@@ -6,10 +6,10 @@ metric:
 parameters:
   training.learning_rate:
     distribution: log_uniform_values
-    min: 1e-4
-    max: 1e-2
+    min: 1e-3
+    max: 1,5e-1
   training.batch_size:
-    values: [16, 32, 64]
+    values: [64, 128, 256]
   training.epochs:
     value: 40
   training.optimizer:
