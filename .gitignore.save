@@ -1,0 +1,13 @@
+  GNU nano 4.8                                       .gitignore_backup
+venv/
+.venv/
+.config
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+# Ignore IDE config folder
+.idea/
+wandb/
+configs/wandb.yaml
+# Ignore Python virtual environmentwandb/
+configs/wandb.yaml
