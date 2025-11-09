@@ -1,10 +1,10 @@
 """
-sweep_train.py — clean refactored version for W&B sweeps
---------------------------------------------------------
+sweep_train.py — W&B sweep version with Early Stopping
+------------------------------------------------------
 - Loads configs (default.yaml + wandb.yaml)
 - Builds and trains MLP
 - Handles W&B sweep overrides
-- Clean logging and evaluation
+- Includes early stopping
 """
 
 import os
@@ -92,7 +92,7 @@ X_test_t, y_test_t = to_tensor(X_test, device), to_tensor(y_test, device)
 # =============================
 
 def train():
-    # === Load and merge configs ===
+    # re-load config (in case sweep overrides modified it)
     with open(yaml_path, "r") as f:
         config = yaml.safe_load(f)
 
@@ -100,13 +100,19 @@ def train():
     wandb.init(
         project=wandb_config["wandb"]["project"],
         entity=wandb_config["wandb"]["entity"],
-        name=wandb_config["wandb"].get("run_name", wandb_config["wandb"]["name"]),
         group=config["experiment"].get("group", None),
         notes=wandb_config["wandb"].get("notes", ""),
         config=wandb_config,
     )
+    run_name = (
+        f"run_lr{wandb.config['training.learning_rate']:.4f}_"
+        f"bs{wandb.config['training.batch_size']}_"
+        f"opt{wandb.config['training.optimizer']}"
+    )
+    wandb.run.name = run_name
+    print(f"Starting W&B run: {wandb.run.name}")
 
-    # Merge sweep parameters into config if any
+    # Apply sweep parameters
     if wandb.run is not None:
         for key, value in dict(wandb.config).items():
             parts = key.split(".")
@@ -115,7 +121,7 @@ def train():
                 sub = sub[p]
             sub[parts[-1]] = value
 
-    # === Build model, optimizer, loss ===
+    # === Build model ===
     model = MLP(
         input_dim=X_train_t.shape[1],
         hidden_layers=config["model"]["hidden_layers"],
@@ -125,6 +131,7 @@ def train():
         activation=config["model"]["activation"]
     ).to(device)
 
+    # Optimizer + Loss
     optimizer_dict = {
         "adam": torch.optim.Adam,
         "sgd": torch.optim.SGD,
@@ -137,11 +144,16 @@ def train():
 
     wandb.watch(model, log="all", log_freq=100)
 
-    # === DataLoaders ===
-    train_dataset = TensorDataset(X_train_t, y_train_t)
-    val_dataset = TensorDataset(X_val_t, y_val_t)
-    train_loader = DataLoader(train_dataset, batch_size=config["training"]["batch_size"], shuffle=True)
-    val_loader = DataLoader(val_dataset, batch_size=config["training"]["batch_size"], shuffle=False)
+    # DataLoaders
+    train_loader = DataLoader(TensorDataset(X_train_t, y_train_t),
+                              batch_size=config["training"]["batch_size"], shuffle=True)
+    val_loader = DataLoader(TensorDataset(X_val_t, y_val_t),
+                            batch_size=config["training"]["batch_size"], shuffle=False)
+
+    # === Early Stopping Setup ===
+    best_val_loss = float('inf')
+    patience = config["training"]["early_stopping"]["patience"]
+    counter = config["training"]["early_stopping"]["counter"]
 
     epochs = config["training"]["epochs"]
     log_interval = config["experiment"]["log_interval"]
@@ -150,6 +162,7 @@ def train():
     for epoch in range(1, epochs + 1):
         model.train()
         training_loss = 0.0
+
         for X_batch, y_batch in train_loader:
             optimizer.zero_grad()
             outputs = model(X_batch).squeeze()
@@ -157,10 +170,13 @@ def train():
             loss.backward()
             optimizer.step()
             training_loss += loss.item()
-        avg_train_loss = training_loss / len(train_loader)
 
+        avg_training_loss = training_loss / len(train_loader)
+
+        # Validation
         model.eval()
-        val_loss, y_true, y_pred = 0.0, [], []
+        val_loss = 0.0
+        y_true, y_pred = [], []
         with torch.no_grad():
             for X_batch, y_batch in val_loader:
                 outputs = model(X_batch).squeeze()
@@ -169,26 +185,37 @@ def train():
                 y_true.extend(y_batch.cpu().numpy())
                 y_pred.extend((outputs.cpu().numpy() >= 0.5).astype(int))
 
+        # Early stopping check
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            counter = 0
+        else:
+            counter += 1
+            if counter > patience:
+                print("Early stopping triggered (overfitting detected).")
+                break
+
         avg_val_loss = val_loss / len(val_loader)
-        val_acc = accuracy_score(y_true, y_pred)
+        val_accuracy = accuracy_score(y_true, y_pred)
         val_f1 = f1_score(y_true, y_pred)
 
+        # Logging
         if epoch % log_interval == 0 or epoch == 1:
-            print(f"Epoch {epoch}/{epochs} "
-                  f"| Train Loss: {avg_train_loss:.4f} "
-                  f"| Val Loss: {avg_val_loss:.4f} "
-                  f"| Val Acc: {val_acc:.4f}")
+            print(f"Epoch {epoch}/{epochs} - "
+                  f"Train Loss: {avg_training_loss:.4f} - "
+                  f"Val Loss: {avg_val_loss:.4f} - "
+                  f"Val Acc: {val_accuracy:.4f}")
 
         if wandb_config["wandb"]["enabled"]:
             wandb.log({
                 "epoch": epoch,
-                "train_loss": avg_train_loss,
+                "train_loss": avg_training_loss,
                 "val_loss": avg_val_loss,
-                "val_accuracy": val_acc,
+                "val_accuracy": val_accuracy,
                 "val_f1": val_f1,
             })
 
-    # === Final Confusion Matrix ===
+    # Final Confusion Matrix
     if wandb_config["wandb"]["enabled"]:
         wandb.log({
             "final_conf_mat": wandb.plot.confusion_matrix(
@@ -199,17 +226,14 @@ def train():
             )
         })
 
+    print("🧹 Sweep run completed. ✅")
 # =============================
 # === 5. MAIN / SWEEP ===
 # =============================
 
 if __name__ == "__main__":
-    # ---- NORMAL TRAIN ----
-    # train()
-
-    # ---- OR SWEEP MODE ----
     with open("configs/sweep.yaml") as f:
         sweep_config = yaml.safe_load(f)
 
     sweep_id = wandb.sweep(sweep_config, project=wandb_config["wandb"]["project"])
-    wandb.agent(sweep_id, function=train, count=10)
+    wandb.agent(sweep_id, function=train, count=100)

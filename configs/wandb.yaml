@@ -1,7 +1,7 @@
 wandb:
-  enabled: true
-  name: "mlp_bioresponse_baseline" # e.g. mlp_bioresponse_baseline
-  project: "bioresponse-mlp" # e.g. bioresponse-mlp
-  entity: "xstyrak-fiit-stu" 
-  run_name: "baseline_40epochs_test_256batch" # e.g. baseline_100epochs_test_tanh
-  notes: "<additional notes>" # e.g. Baseline MLP with dropout 0.3 and batch normalization
+  enabled: false
+  name: "mlp_bioresponse_baseline"
+  project: "bioresponse-mlp"
+  entity: "xmajercik-fiit-stu"
+  run_name: "mlp_baseline_100epochs_test_tanh"
+  notes: "Baseline MLP with dropout 0.3 and batch normalization"

@@ -6,21 +6,28 @@ metric:
 parameters:
   training.learning_rate:
     distribution: log_uniform_values
-    min: 1e-3
-    max: 1,5e-1
+    min: 1e-4
+    max: 1e-1
   training.batch_size:
     values: [64, 128, 256]
   training.epochs:
     value: 40
   training.optimizer:
-    values: ["adam", "sgd", "adamw"]
+    values: ["adam", "sgd", "adamw", "rmsprop"]
+  training.early_stopping.patience:
+    values: [3, 5, 8]
+  training.early_stopping.counter:
+    value: 0
+
   model.hidden_layers:
     values:
+      - [512]
       - [128, 64, 32]
       - [256, 128, 64]
       - [64, 128, 256]
       - [128, 256]
       - [512, 256, 128, 64]
+      - [128, 128, 64, 128, 64]
   model.activation:
     values: ["relu", "tanh"]
   model.dropout:

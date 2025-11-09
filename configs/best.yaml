@@ -1,18 +1,21 @@
 # configs/best.yaml
 model:
   # input_dim: # set dynamically based on dataset
-  hidden_layers: [512, 256, 128, 64]   
-  activation: relu                     
-  dropout: 0.2                         
+  hidden_layers: [64, 128] 
+  activation: tanh                     
+  dropout: 0.1                         
   batch_norm: true
   output_dim: 1                        # binary classification
 
 training:
   epochs: 40                           
-  batch_size: 256                       
-  learning_rate: 0.01
-  optimizer: adamw                     
-  device: cuda                         
+  batch_size: 64                       
+  learning_rate: 0.0017417310784954333
+  optimizer: adam                     
+  device: cuda   
+  early_stopping:
+    patience: 8
+    counter: 0                      
 
 experiment:
   group: "sweep-01-best"               

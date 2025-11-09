@@ -8,11 +8,14 @@ model:
   output_dim: 1  # binary classification
 
 training:
-  epochs: 100
+  epochs: 40
   batch_size: 32
   learning_rate: 1e-3
   optimizer: rmsprop      # (adam / sgd / adamw / rmsprop
   device: cpu
+  early_stopping:
+    patience: 10
+    counter: 0
 
 experiment:
   group: "sweep-01" # used for wandb grouping
