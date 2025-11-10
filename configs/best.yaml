@@ -3,7 +3,7 @@ model:
   # input_dim: # set dynamically based on dataset
   hidden_layers: [64, 128] 
   activation: tanh                     
-  dropout: 0.1                         
+  dropout: 0.2                         
   batch_norm: true
   output_dim: 1                        # binary classification
 
